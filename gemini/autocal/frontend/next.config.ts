@@ -16,7 +16,74 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  /* Performance optimizations */
+  reactStrictMode: true,
+  swcMinify: true, // Use SWC for faster minification
+  compress: true, // Enable gzip compression
+  
+  // Optimize production output
+  output: 'standalone', // For smaller Docker images and faster deployments
+  
+  // Image optimization
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+  
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true, // Enable CSS optimization
+    optimizePackageImports: ['@mui/material', '@mui/icons-material'], // Tree-shake Material-UI
+  },
+  
+  // Webpack optimizations
+  webpack: (config, { dev, isServer }) => {
+    // Production optimizations
+    if (!dev && !isServer) {
+      config.optimization = {
+        ...config.optimization,
+        moduleIds: 'deterministic',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Vendor chunk for node_modules
+            vendor: {
+              name: 'vendor',
+              chunks: 'all',
+              test: /node_modules/,
+              priority: 20,
+            },
+            // Common chunk for shared code
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 10,
+              reuseExistingChunk: true,
+              enforce: true,
+            },
+            // Material-UI chunk
+            mui: {
+              name: 'mui',
+              test: /@mui/,
+              chunks: 'all',
+              priority: 30,
+            },
+            // Firebase chunk
+            firebase: {
+              name: 'firebase',
+              test: /firebase/,
+              chunks: 'all',
+              priority: 30,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;

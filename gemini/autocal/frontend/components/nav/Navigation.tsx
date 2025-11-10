@@ -20,9 +20,14 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import TopLoginLogout from "@/components/nav/TopLoginLogout";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import dynamic from "next/dynamic";
+
+// Lazy load TopLoginLogout for better initial page load
+const TopLoginLogout = dynamic(() => import("@/components/nav/TopLoginLogout"), {
+  ssr: false,
+});
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 

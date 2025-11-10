@@ -39,8 +39,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "3mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -48,12 +48,30 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": true
+              },
+              "buildOptimizer": true,
+              "aot": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "commonChunk": true,
+              "sourceMap": false
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "namedChunks": true,
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
           },
           "defaultConfiguration": "production"

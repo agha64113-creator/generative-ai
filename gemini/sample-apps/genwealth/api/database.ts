@@ -1,5 +1,8 @@
 import { Pool } from 'pg'
-import * as _ from 'lodash';
+// Use specific lodash imports to reduce bundle size
+import map from 'lodash/map';
+import mapKeys from 'lodash/mapKeys';
+import camelCase from 'lodash/camelCase';
 
 /**
  * Required ENV variables to be set:
@@ -17,8 +20,8 @@ import * as _ from 'lodash';
  * @param rows Rows from a database query
  * @returns 
  */
-export const camelCaseRows = (rows: any[]) => _.map(rows, (row) => 
-  _.mapKeys(row, (value, key) => _.camelCase(key)));
+export const camelCaseRows = (rows: any[]) => map(rows, (row) => 
+  mapKeys(row, (value, key) => camelCase(key)));
 
 /**
  * Escapes single quotes in a string.
