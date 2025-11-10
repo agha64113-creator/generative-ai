@@ -28,7 +28,7 @@ import {ModelsService} from 'src/app/services/models.service';
   styleUrls: ['./manage-intent.component.scss'],
 })
 export class ManageIntentComponent {
-  intents: IntentDetails[];
+  intents: IntentDetails[] = [];
   showMainSpinner = false;
   models: Model[] = [];
   createMode = false;

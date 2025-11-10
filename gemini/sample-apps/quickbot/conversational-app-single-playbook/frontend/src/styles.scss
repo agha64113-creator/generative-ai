@@ -31,37 +31,9 @@ font-variation-settings:
     max-width: unset !important;
 }
 
-.mat-mdc-slide-toggle.mat-accent {
-  --mdc-switch-selected-focus-state-layer-color: #4285F4;
-  --mdc-switch-selected-handle-color: #4285F4;
-  --mdc-switch-selected-hover-state-layer-color: #4285F4;
-  --mdc-switch-selected-pressed-state-layer-color: #4285F4;
-  --mdc-switch-selected-focus-handle-color: #3f74e0;
-  --mdc-switch-selected-hover-handle-color: #3f74e0;
-  --mdc-switch-selected-pressed-handle-color: #3f74e0;
-  --mdc-switch-selected-focus-track-color: rgba(66, 133, 244, 0.3);
-  --mdc-switch-selected-hover-track-color: rgba(66, 133, 244, 0.3);
-  --mdc-switch-selected-pressed-track-color: rgba(66, 133, 244, 0.3);
-  --mdc-switch-selected-track-color: rgba(66, 133, 244, 0.3);
-}
-
 .arrow-top {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) !important;
   border-radius: 20px !important;
-}
-
-.mat-mdc-checkbox.mat-accent {
-  --mdc-checkbox-selected-checkmark-color: #fff;
-  --mdc-checkbox-selected-focus-icon-color: #4285F4;
-  --mdc-checkbox-selected-hover-icon-color: #4285F4;
-  --mdc-checkbox-selected-icon-color: #4285F4;
-  --mdc-checkbox-selected-pressed-icon-color: #4285F4;
-  --mdc-checkbox-unselected-focus-icon-color: #212121;
-  --mdc-checkbox-unselected-hover-icon-color: #212121;
-  --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
-  --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
-  --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
-  --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
 }
 
 $tour-skip-link-color: red;
@@ -74,3 +46,23 @@ $tour-next-button-hover: black;
 $tour-back-button-color: white;
 $tour-shadow-color: gray;
 $tour-step-color: aliceblue;
+
+pre {
+  margin: 1rem 0;
+}
+
+code {
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, 'Liberation Mono',
+    Menlo, monospace;
+  font-size: 0.9rem;
+}
+
+pre code {
+  display: block;
+  padding: 12px;
+  overflow-x: auto;
+  background-color: #0b1021;
+  color: #e8edf2;
+  border-radius: 8px;
+  line-height: 1.5;
+}

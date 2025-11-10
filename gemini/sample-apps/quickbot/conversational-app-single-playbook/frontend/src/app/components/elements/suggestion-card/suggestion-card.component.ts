@@ -22,7 +22,7 @@ import {SuggestionData} from 'src/app/models/messegeType.model';
   styleUrls: ['./suggestion-card.component.scss'],
 })
 export class SuggestionCardComponent {
-  @Input() data: SuggestionData;
+  @Input() data!: SuggestionData;
   @Output() raiseQuery = new EventEmitter<string>();
   @Output() dismissSuggestionCard = new EventEmitter();
 

@@ -14,30 +14,14 @@
  * limitations under the License.
  */
 
-.toast-message {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ManageIntentComponent} from './manage-intent.component';
 
-.toast-content{
-    color: #FFFFFF;
-    font-family: 'Google Sans', sans-serif !important;
-}
+const routes: Routes = [{path: '', component: ManageIntentComponent}];
 
-.close-toast{
-    margin-left: auto;
-    align-self: baseline;
-    cursor: pointer;
-}
-
-.red-toast {
-    background-color: #ED0C0C !important;
-}
-.green-toast {
-    background-color: #06865e !important;
-}
-
-.mat-mdc-snack-bar-container .mdc-snackbar__surface{
-    background-color: transparent !important;
-}
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class ManageIntentRoutingModule {}
