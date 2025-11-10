@@ -19,6 +19,12 @@
   font-family: "Google Sans", sans-serif !important;
 }
 
+.toast-container {
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
 .close-toast {
   margin-left: auto;
   align-self: baseline;
