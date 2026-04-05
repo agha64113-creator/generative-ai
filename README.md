@@ -11,6 +11,43 @@
 
 This repository contains notebooks, code samples, sample apps, and other resources that demonstrate how to use, develop and manage generative AI workflows using [Generative AI on Google Cloud](https://cloud.google.com/ai/generative-ai) with [Vertex AI](https://cloud.google.com/vertex-ai).
 
+## Overview
+
+This is a **comprehensive, community-driven repository** serving as the official Google Cloud showcase for building generative AI applications on [Vertex AI](https://cloud.google.com/vertex-ai). Whether you are a beginner exploring AI capabilities or an enterprise engineer building production systems, this repository has something for you.
+
+### What's inside?
+
+| Area | Description |
+|---|---|
+| 🤖 **Gemini** | 300+ Jupyter notebooks and sample apps covering Gemini 2.5 Pro/Flash, function calling, multimodal inputs (text, image, audio, video), agents, RAG, and more. |
+| 🔍 **Search** | Vertex AI Search examples for building enterprise-grade search engines over websites and internal data. |
+| 🧠 **RAG & Grounding** | Retrieval Augmented Generation (RAG) techniques using Vertex AI RAG Engine, LangChain, LlamaIndex, BigQuery, and third-party vector databases. |
+| 🖼️ **Vision** | Image generation, editing, visual captioning, and visual question answering using Imagen (Imagen 3 & 4) and Veo (video generation). |
+| 🔊 **Audio** | Speech recognition and synthesis using Chirp (Chirp 2 & 3) and music generation using Lyria. |
+| 🤝 **Agents** | Multi-agent systems, agent orchestration, Agent Development Kit (ADK) samples, and the Multimodal Live API. |
+| 📦 **Embeddings** | Text and multimodal embedding models with vector search integrations. |
+| 🌐 **Open & Partner Models** | Open-source model serving (Gemma, Llama, Qwen, DeepSeek), fine-tuning guides, and partner models (e.g., Claude by Anthropic). |
+
+### Key technologies
+
+- **Models**: Gemini 2.5 Pro/Flash, Imagen 3/4, Veo 2/3, Chirp 2/3, Lyria, Gemma, Claude 3.5 Sonnet
+- **Google Cloud**: Vertex AI, Vertex AI Search, Cloud Run, Cloud Functions, BigQuery, AlloyDB, GKE
+- **Frameworks**: LangChain, LlamaIndex, Firebase Genkit, Streamlit, Gradio, FastAPI, Next.js
+- **Languages**: Python, TypeScript/JavaScript, SQL, Terraform
+
+### Who is this for?
+
+- **Students & researchers** who want to learn how generative AI works through hands-on Jupyter notebooks
+- **Application developers** looking for ready-to-use sample apps (chatbots, financial advisors, image tools, etc.)
+- **Enterprise engineers** building production RAG pipelines, search solutions, or multi-agent systems on Google Cloud
+- **ML practitioners** interested in model fine-tuning, evaluation, prompt optimization, and responsible AI
+
+### Getting started
+
+1. Browse the [`setup-env/`](setup-env/) folder for instructions on setting up Google Cloud, the Vertex AI Python SDK, and a notebook environment (Google Colab or Vertex AI Workbench).
+2. Explore [`gemini/getting-started/`](gemini/getting-started/) for introductory notebooks on the latest Gemini models.
+3. Dive into any topic directory (`gemini/`, `vision/`, `audio/`, `agents/`, etc.) based on your area of interest.
+
 ## Using this repository
 
 [![Applied AI Summit: The cloud toolkit for generative AI](https://img.youtube.com/vi/xT7WW2SKLfE/hqdefault.jpg)](https://www.youtube.com/watch?v=xT7WW2SKLfE)
