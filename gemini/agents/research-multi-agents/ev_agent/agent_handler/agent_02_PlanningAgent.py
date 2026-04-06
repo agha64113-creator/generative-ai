@@ -270,7 +270,7 @@ class PlanningAgent(BaseModel):
             needs_visualization = self._determine_visualization_requirement()
             if self.debug:
                 print("visualization toggle: ", needs_visualization)
-            if isinstance(needs_visualization, bool) and needs_visualization or (
+            if (isinstance(needs_visualization, bool) and needs_visualization) or (
                 isinstance(needs_visualization, str)
                 and needs_visualization.strip().lower() == "true"
             ):
