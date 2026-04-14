@@ -23,13 +23,15 @@ import Alert from "@mui/material/Alert";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
 import CardActions from "@mui/material/CardActions";
-import Markdown from "react-markdown";
 import DownloadIcon from "@mui/icons-material/Download";
 import ShareIcon from "@mui/icons-material/Share";
+
+// Lazy load react-markdown to reduce initial bundle size
+const Markdown = lazy(() => import("react-markdown"));
 
 export interface PostcardImageProps {
   postcardImage: string | null;
@@ -112,9 +114,11 @@ export default function PostcardImage({ postcardImage, generating, error, mapIma
             />
             <CardContent>
               <Typography sx={{ marginBottom: 2 }} component="span">
-                <Markdown>
-                  {story}
-                </Markdown>
+                <Suspense fallback={<Typography>Loading...</Typography>}>
+                  <Markdown>
+                    {story}
+                  </Markdown>
+                </Suspense>
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -150,9 +154,11 @@ export default function PostcardImage({ postcardImage, generating, error, mapIma
                   Prompt
                 </Typography>
                 <Typography sx={{ marginBottom: 2 }} component="span">
-                  <Markdown>
-                    {description}
-                  </Markdown>
+                  <Suspense fallback={<Typography>Loading...</Typography>}>
+                    <Markdown>
+                      {description}
+                    </Markdown>
+                  </Suspense>
                 </Typography>
               </CardContent>
             </Collapse>

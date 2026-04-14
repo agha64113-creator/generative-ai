@@ -28,7 +28,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { processedScreenshotConverter } from "@/libs/schema/schema";
 import dynamic from "next/dynamic";
 import Box from "@mui/material/Box";
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { Status } from "@/components/context/StatusContext";
 import UploadForm from "@/components/upload/UploadForm";
