@@ -13,7 +13,7 @@ This repository contains notebooks, code samples, sample apps, and other resourc
 
 ## Overview
 
-This is a **comprehensive, community-driven repository** serving as the official Google Cloud showcase for building generative AI applications on [Vertex AI](https://cloud.google.com/vertex-ai). Whether you are a beginner exploring AI capabilities or an enterprise engineer building production systems, this repository has something for you.
+This is a **comprehensive, community-driven repository** serving as a Google Cloud showcase for building generative AI applications on [Vertex AI](https://cloud.google.com/vertex-ai). Whether you are a beginner exploring AI capabilities or an enterprise engineer building production systems, this repository has something for you.
 
 ### What's inside?
 
