@@ -3,7 +3,7 @@
 **Repository:** `agha64113-creator/generative-ai`  
 **Analysis Date:** 2026-05-04  
 **Analyst:** copilot-swe-agent[bot]  
-**Total Branches:** 62
+**Total Branches:** 60
 
 ---
 
@@ -82,8 +82,6 @@
 | 58 | `update-agents` | `89445d1` | Partial conversion to ADK | holtskinner | 2025-09-25 | behind | Upstream — ADK agent conversion |
 | 59 | `vais-3p` | `db5409b` | feat: 3P Sources for VAIS Notebook | holtskinner | 2024-11-11 | behind | Upstream — Vertex AI Search 3rd-party sources |
 | 60 | `vais-standalone-apis` | `f3c9b17` | Ran formatter | holtskinner | 2024-08-07 | behind | Upstream — VAIS standalone APIs formatting |
-| 61 | `alokpattani-ytdataapi-batchpred` | `14641b1` | Add scaled video analysis NB (YT API + batch pred) | alokpattani | 2024-12-10 | behind | Upstream contributor — YT data API notebook |
-| 62 | `patch-1` | `2f2e1c2` | Update and rename CONTRIBUTING.md | agha64113-creator | 2026-05-02 | ahead | Repo owner branch |
 
 *"Ahead/behind `main`" is approximate based on commit SHA comparison and is categorized as: `at main` (same SHA as main), `ahead` (newer commits on top of main), or `behind` (forked from an older commit before current main).
 
