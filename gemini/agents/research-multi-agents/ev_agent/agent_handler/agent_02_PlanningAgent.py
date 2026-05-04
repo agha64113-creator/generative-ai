@@ -270,8 +270,10 @@ class PlanningAgent(BaseModel):
             needs_visualization = self._determine_visualization_requirement()
             if self.debug:
                 print("visualization toggle: ", needs_visualization)
-                print("Type of Visual toggle:", type(eval(needs_visualization)))
-            if eval(needs_visualization):
+            if (isinstance(needs_visualization, bool) and needs_visualization) or (
+                isinstance(needs_visualization, str)
+                and needs_visualization.strip().lower() == "true"
+            ):
                 steps.append(
                     PlanStep(
                         step_id=4,
