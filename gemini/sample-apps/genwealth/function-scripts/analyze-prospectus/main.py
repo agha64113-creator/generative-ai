@@ -50,8 +50,10 @@ def analyze_prospectus(cloud_event):
         creator=getconn,
     )
 
-    # Prep SQL statement
-    sql = f"SELECT content FROM {table_name} WHERE ticker = '{ticker}' ORDER BY page, page_chunk"
+    # Prep SQL statement (parameterized to prevent SQL injection)
+    sql = sqlalchemy.text(
+        f"SELECT content FROM {table_name} WHERE ticker = :ticker ORDER BY page, page_chunk"
+    )
 
     # Prep model and template
     model = VertexAI(
@@ -85,7 +87,7 @@ def analyze_prospectus(cloud_event):
     # Create overview of full document by iterating through chunks
     with pool.connect() as db_conn:
         # query database
-        result = db_conn.execute(sqlalchemy.text(sql)).fetchall()
+        result = db_conn.execute(sql, {"ticker": ticker}).fetchall()
 
         # commit transaction (SQLAlchemy v2.X.X is commit as you go)
         db_conn.commit()
