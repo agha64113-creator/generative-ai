@@ -52,7 +52,7 @@ def analyze_prospectus(cloud_event):
 
     # Prep SQL statement (parameterized to prevent SQL injection)
     sql = sqlalchemy.text(
-        f"SELECT content FROM {table_name} WHERE ticker = :ticker ORDER BY page, page_chunk"
+        "SELECT content FROM langchain_vector_store WHERE ticker = :ticker ORDER BY page, page_chunk"
     )
 
     # Prep model and template
