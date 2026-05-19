@@ -1,0 +1,26 @@
+title = "generative-ai secret scanning policy"
+
+[allowlist]
+description = "Allow placeholder values used in documentation and examples"
+paths = [
+  '''(?i).*README\.md$''',
+  '''(?i).*docs/.*\.md$''',
+  '''(?i).*\.ipynb$'''
+]
+regexes = [
+  '''(?i)your[_-]?(api|secret|token|key)''',
+  '''(?i)example[_-]?(api|secret|token|key)''',
+  '''(?i)changeme'''
+]
+
+[[rules]]
+id = "provider-api-keys"
+description = "Potential provider API keys and secrets"
+regex = '''(?i)(openai|gemini|google|drive|elevenlabs|deepgram|assemblyai|voice|tts|stt)[a-z0-9_\-]{0,30}(api[_-]?key|secret|token)["'=: ]+[A-Za-z0-9_\-]{16,}'''
+keywords = ["api_key", "secret", "token", "openai", "gemini", "google", "drive", "elevenlabs", "deepgram", "assemblyai"]
+
+[[rules]]
+id = "google-service-account-json"
+description = "Google service account key fields"
+regex = '''(?i)"private_key"\s*:\s*"-----BEGIN PRIVATE KEY-----'''
+keywords = ["private_key", "client_email", "service_account"]
