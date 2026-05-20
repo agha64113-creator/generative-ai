@@ -25,7 +25,6 @@ import {
   SafeResourceUrl,
   SafeUrl,
 } from '@angular/platform-browser';
-import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-results',
@@ -54,7 +53,6 @@ export class SearchResultsComponent implements OnDestroy {
     private route: ActivatedRoute,
     private service: SearchService,
     private userService: UserService,
-    private dialog: MatDialog,
     private sanitizer: DomSanitizer
   ) {
     const query = this.route.snapshot.queryParamMap.get('q');
